@@ -9,6 +9,7 @@ instance/
 
 # Virtual environments
 .venv
+venv/
 
 # Scripts
 clean
