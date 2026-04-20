@@ -39,6 +39,8 @@ Steps Taken:
     - Analyzed relationships between churn and monthly charges, tenure, as well as contract types.
 3. Data Preprocessing
     - Converted categorical variables using one-hot encoding (pd.get_dummies()).
+    - Created 6 new features from the existing features
+    - Use SMOTE to balance the classes
 4. Modeling
     - Logistic Regression
     - Random Forest
