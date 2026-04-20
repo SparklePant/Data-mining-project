@@ -1,4 +1,3 @@
-## Data-mining-project
 # Final Project for Data Mining CAP4770
 
 Project Name: Customer Churn Prediction
