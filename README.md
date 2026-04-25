@@ -65,6 +65,8 @@ Setup Instructions:
     Windows:     run command: venv\Scripts\activate
 3. Install Dependencies: run command: pip install -r requirements.txt
 4. Running the Project: 
+    First start mySQL
+    run command: python setup_mysql_database.py
     run command: jupyter notebook
     from jupyter notebook: Run all cells from top to bottom
  
