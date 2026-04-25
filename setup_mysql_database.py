@@ -113,10 +113,14 @@ def load_data_to_mysql(excel_file, host='localhost', user='root', password='your
         placeholders = ', '.join(['%s'] * len(df.columns))
         insert_query = f"INSERT INTO {table_name} VALUES ({placeholders})"
         
+        # Replace pandas NaN values with None so MySQL stores them as NULL
+        df = df.where(pd.notnull(df), None)
+        
         # Insert data
         print("Inserting data into MySQL...")
         for idx, row in df.iterrows():
-            cursor.execute(insert_query, tuple(row))
+            values = [None if pd.isna(x) else x for x in row]
+            cursor.execute(insert_query, tuple(values))
             if (idx + 1) % 1000 == 0:
                 print(f"Inserted {idx + 1} rows...")
         
